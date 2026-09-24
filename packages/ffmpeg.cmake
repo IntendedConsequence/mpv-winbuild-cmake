@@ -61,6 +61,7 @@ ExternalProject_Add(ffmpeg
         --enable-version3
         --enable-avisynth
         --enable-vapoursynth
+        --enable-ladspa
         --enable-libass
         --enable-libbluray
         --enable-libdvdnav
