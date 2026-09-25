@@ -45,6 +45,7 @@ ExternalProject_Add(ffmpeg
         libva
         openal-soft
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
+    GIT_TAG n9.0.2
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--sparse --filter=tree:0"
     GIT_CLONE_POST_COMMAND "sparse-checkout set --no-cone /* !tests/ref/fate"
@@ -120,6 +121,8 @@ ExternalProject_Add(ffmpeg
     INSTALL_COMMAND ${MAKE} install
     LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1
 )
+
+set_property(TARGET ffmpeg PROPERTY _EP_GIT_RESET n9.0.2)
 
 force_rebuild_git(ffmpeg)
 cleanup(ffmpeg install)
